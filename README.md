@@ -26,4 +26,29 @@
     - JPQL(Java Persistence Query Language )
     - Query dsl
 - 위와같은 번거로운 과정을 쿼리메소드로 그나마 줄여줄 수 있다.
-    
+- 쿼리라는 용어는 select 에만 해당이 되는 것을 기억하자
+    - find...By
+    - read...By
+    - query...By
+    - get...By
+    - count...By
+- 쿼리메소드
+    - find(Repository)Bt(Column_Name)
+    - return : Collection<T>
+    - [Define Query Methods Docs](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods.details)
+- 페이징 처리 정렬
+    - pageable interface
+        - PageRequest Class 를 사용하자 
+    - sort interface
+    - Page<T> 를 잘 활용하자
+        - 페이지네이션에 필요한 정보들을 한번에 얻을 수 있다.
+- @Query 이용하기
+    - 어노테이션 안에 쿼리를 작성하는 것 
+        - JPQL 
+        - 혹은 순수 데이터 베이스에 맞는 SQL 
+    - 실행계획을 잘 알아야 한다.
+    - 장점
+        - 네이티브 SQL에 대한 작업이 이루어지므로 쿼리 튜닝에 대한 작업이 이루어 질 수 있다.
+        - 필요한 칼럼만 추출이 가능하다.
+- Querydsl ( Domain Specific Language )
+    - QDomain
