@@ -52,3 +52,16 @@
         - 필요한 칼럼만 추출이 가능하다.
 - Querydsl ( Domain Specific Language )
     - QDomain
+
+## ch4 JPA 연관관계 & Thymeleaf
+- Optional<T>
+- @OneToOne , @OneToMany , @ManyToOne , @ManyToMany
+- Repository 작성
+- JoinTable , JoinColumn
+- 등록과 cascade , 영속성 전이
+- 첨부파일 수정과 @Modifying , @Transactional
+    - Transactional 은 기본적으로 rollback 처리를 한다 이를 없애려면 commit 
+- mappedBy
+- 지연 로딩 , 즉시 로딩
+- 인덱스 처리 
+ 
