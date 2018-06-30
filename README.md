@@ -65,3 +65,7 @@
 - 지연 로딩 , 즉시 로딩
 - 인덱스 처리 
  
+ ## ch5 Thymeleaf 
+
+ - Templete Engine
+ - th: text | each 
