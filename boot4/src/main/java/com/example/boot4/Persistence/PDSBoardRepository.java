@@ -7,11 +7,11 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface PDSBoardRepository extends CrudRepository<PDSBoard,Long>{
+public interface PDSBoardRepository extends CrudRepository<PDSBoard, Long> {
 
     @Modifying
     @Query("update PDSFile f set f.pdsfile = ?2 where f.fno = ?1")
-    public int updatePDSFile(Long fno,String newFileName);
+    public int updatePDSFile(Long fno, String newFileName);
 
     @Modifying
     @Query("DELETE FROM PDSFile f where f.fno = ?1")

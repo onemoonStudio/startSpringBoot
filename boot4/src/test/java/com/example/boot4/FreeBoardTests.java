@@ -35,13 +35,13 @@ public class FreeBoardTests {
     FreeBoardReplyRepository replyRepo;
 
     @Test
-    public void insertDummy(){
+    public void insertDummy() {
 
-        IntStream.range(1,200).forEach(i ->{
+        IntStream.range(1, 200).forEach(i -> {
             FreeBoard board = new FreeBoard();
             board.setTitle("Free Board ... " + i);
-            board.setContent("Free Content ... " + i );
-            board.setWriter("user" + i%10);
+            board.setContent("Free Content ... " + i);
+            board.setWriter("user" + i % 10);
             boardRepo.save(board);
         });
 
@@ -50,10 +50,10 @@ public class FreeBoardTests {
 
     @Transactional
     @Test
-    public void insertReply2Way(){
+    public void insertReply2Way() {
         Optional<FreeBoard> result = boardRepo.findById(199L);
 
-        result.ifPresent(board->{
+        result.ifPresent(board -> {
             List<FreeBoardReply> replies = board.getReplies();
 
             FreeBoardReply reply = new FreeBoardReply();
@@ -70,7 +70,7 @@ public class FreeBoardTests {
     }
 
     @Test
-    public void insertReply1Way(){
+    public void insertReply1Way() {
         FreeBoard board = new FreeBoard();
         board.setBno(197L);
 
@@ -83,28 +83,28 @@ public class FreeBoardTests {
     }
 
     @Test
-    public void testList1(){
-        Pageable page = PageRequest.of(0,10, Sort.Direction.DESC , "bno");
+    public void testList1() {
+        Pageable page = PageRequest.of(0, 10, Sort.Direction.DESC, "bno");
 
-        boardRepo.findByBnoGreaterThan(0L,page).forEach(board ->{
+        boardRepo.findByBnoGreaterThan(0L, page).forEach(board -> {
             log.info(board.getBno() + ": " + board.getTitle());
         });
     }
 
     @Transactional // for lazy
     @Test
-    public void testList2(){
-        Pageable page = PageRequest.of(0,10, Sort.Direction.DESC,"bno");
-        boardRepo.findByBnoGreaterThan(0L,page).forEach(board ->{
-            log.info(board.getBno() + ": " + board.getTitle()+"["+board.getReplies().size()+"]");
+    public void testList2() {
+        Pageable page = PageRequest.of(0, 10, Sort.Direction.DESC, "bno");
+        boardRepo.findByBnoGreaterThan(0L, page).forEach(board -> {
+            log.info(board.getBno() + ": " + board.getTitle() + "[" + board.getReplies().size() + "]");
         });
     }
 
     @Test
-    public void testList3(){
-        Pageable page = PageRequest.of(0,10, Sort.Direction.DESC,"bno");
+    public void testList3() {
+        Pageable page = PageRequest.of(0, 10, Sort.Direction.DESC, "bno");
 
-        boardRepo.getPage(page).forEach(arr->{
+        boardRepo.getPage(page).forEach(arr -> {
             log.info(Arrays.toString(arr));
         });
     }

@@ -13,7 +13,7 @@ import java.util.List;
 @ToString(exclude = "files")
 @Entity
 @Table(name = "tbl_pds")
-@EqualsAndHashCode(of="pid")
+@EqualsAndHashCode(of = "pid")
 public class PDSBoard {
 
     @Id

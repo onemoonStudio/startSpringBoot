@@ -29,26 +29,26 @@ public class ProfileTests {
     ProfileRepository profileRepo;
 
     @Test
-    public void testInsertMembers(){
-        IntStream.range(1,101).forEach(i-> {
+    public void testInsertMembers() {
+        IntStream.range(1, 101).forEach(i -> {
             Member member = new Member();
-            member.setUid("User"+i);
-            member.setUname("사용자_"+i);
-            member.setUpw("pw_"+i);
+            member.setUid("User" + i);
+            member.setUname("사용자_" + i);
+            member.setUpw("pw_" + i);
             memberRepo.save(member);
         });
     }
 
     @Test
-    public void testInsertProfile(){
+    public void testInsertProfile() {
         Member member = new Member();
         member.setUid("User1");
 
-        for(int i=1;i<5;i++){
+        for (int i = 1; i < 5; i++) {
             Profile profile1 = new Profile();
-            profile1.setFname("face"+i+".jpg");
+            profile1.setFname("face" + i + ".jpg");
 
-            if( i ==1 ){
+            if (i == 1) {
                 profile1.setCurrent(true);
             }
             profile1.setMember(member);
@@ -58,10 +58,10 @@ public class ProfileTests {
     }
 
     @Test
-    public void testFetchJoin(){
+    public void testFetchJoin() {
         List<Object[]> result = memberRepo.getMemberWithProfileCount("User1");
 
-        result.forEach(arr ->{
+        result.forEach(arr -> {
             System.out.println(Arrays.toString(arr));
         });
     }

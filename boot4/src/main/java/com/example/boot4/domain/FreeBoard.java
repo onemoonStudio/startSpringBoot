@@ -33,9 +33,9 @@ public class FreeBoard {
     @UpdateTimestamp
     private Timestamp updatedate;
 
-    @OneToMany(mappedBy = "board" , cascade = CascadeType.ALL
+    @OneToMany(mappedBy = "board", cascade = CascadeType.ALL
 //            ,fetch = FetchType.EAGER
-            ,fetch = FetchType.LAZY
+            , fetch = FetchType.LAZY
     )
     List<FreeBoardReply> replies;
 

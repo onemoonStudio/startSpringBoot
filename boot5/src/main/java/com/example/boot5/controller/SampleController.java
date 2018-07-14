@@ -14,29 +14,29 @@ import java.util.List;
 public class SampleController {
 
     @GetMapping("/sample1")
-    public void sample1(Model model){
-        model.addAttribute("Greeting" , "Hello world and Spring Boot");
-        model.addAttribute("Test" , "안녕하세요");
+    public void sample1(Model model) {
+        model.addAttribute("Greeting", "Hello world and Spring Boot");
+        model.addAttribute("Test", "안녕하세요");
     }
 
     @GetMapping("/sample2")
-    public void sample2(Model model){
-        MemberVO mem = new MemberVO(123,"u00","1234" , "홍길동"
-        , new Timestamp(System.currentTimeMillis()));
+    public void sample2(Model model) {
+        MemberVO mem = new MemberVO(123, "u00", "1234", "홍길동"
+                , new Timestamp(System.currentTimeMillis()));
 
-        model.addAttribute("member",mem);
+        model.addAttribute("member", mem);
     }
 
     @GetMapping("/sample3")
-    public void sample3(Model model){
+    public void sample3(Model model) {
         List<MemberVO> list = new ArrayList<>();
 
-        for(int i=0;i<10;i++){
-            list.add(new MemberVO(123,"u0"+i,"p0"+i , "홍길동" + i
+        for (int i = 0; i < 10; i++) {
+            list.add(new MemberVO(123, "u0" + i, "p0" + i, "홍길동" + i
                     , new Timestamp(System.currentTimeMillis())));
         }
 
-        model.addAttribute("list" , list);
+        model.addAttribute("list", list);
     }
 
 }

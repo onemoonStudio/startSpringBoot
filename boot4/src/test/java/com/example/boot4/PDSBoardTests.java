@@ -28,7 +28,7 @@ public class PDSBoardTests {
     PDSBoardRepository repo;
 
     @Test
-    public void testInsertPDS(){
+    public void testInsertPDS() {
         PDSBoard pds = new PDSBoard();
         pds.setPname("Document 1 - 2");
 
@@ -37,7 +37,7 @@ public class PDSBoardTests {
         PDSFile file2 = new PDSFile();
         file2.setPdsfile("file2.doc");
 
-        pds.setFiles(Arrays.asList(file1,file2));
+        pds.setFiles(Arrays.asList(file1, file2));
 
         log.info("try to save pds");
 
@@ -47,21 +47,21 @@ public class PDSBoardTests {
 
     @Transactional // update 와 delete 에는 필수다
     @Test
-    public void testUpdateFileName1(){
+    public void testUpdateFileName1() {
 
         Long fno = 1L;
         String newName = "updateFile1.doc";
 
-        int count = repo.updatePDSFile(fno,newName);
+        int count = repo.updatePDSFile(fno, newName);
 
-        log.info("update Count: "+count);
+        log.info("update Count: " + count);
 
     }
 
 
     @Transactional
     @Test
-    public void testUpdateFilesName2(){
+    public void testUpdateFilesName2() {
         String newName = "updateFile2.doc";
 
         Optional<PDSBoard> result = repo.findById(2L);
@@ -74,7 +74,7 @@ public class PDSBoardTests {
 
             int idx = pdsBoard.getFiles().indexOf(target);
 
-            if(idx > -1){
+            if (idx > -1) {
                 List<PDSFile> list = pdsBoard.getFiles();
                 list.remove(idx);
                 list.add(target);
@@ -89,24 +89,24 @@ public class PDSBoardTests {
 
     @Transactional
     @Test
-    public void testDeleteFile(){
+    public void testDeleteFile() {
         Long fno = 4L;
 
         int count = repo.deletePDSFile(fno);
 
-        log.info("delete PDSFile : "+ count);
+        log.info("delete PDSFile : " + count);
 
     }
 
     @Test
-    public void insertdummies(){
+    public void insertdummies() {
 
         List<PDSBoard> list = new ArrayList<>();
 
         IntStream.range(1, 100).forEach(i -> {
 
             PDSBoard pds = new PDSBoard();
-            pds.setPname("자료 " +i);
+            pds.setPname("자료 " + i);
 
             PDSFile file1 = new PDSFile();
             file1.setPdsfile("file1.doc");
@@ -127,7 +127,7 @@ public class PDSBoardTests {
 
 
     @Test
-    public void viewSummary(){
+    public void viewSummary() {
 
         repo.getSummary().forEach(arr ->
                 log.info(Arrays.toString(arr)));

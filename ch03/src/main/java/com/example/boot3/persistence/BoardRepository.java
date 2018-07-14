@@ -19,17 +19,17 @@ public interface BoardRepository extends CrudRepository<Board, Long> {
 
     public Collection<Board> findByContentContainingOrWriterContaining(String Content, String Writer);
 
-    public Collection<Board> findByTitleContainingAndBnoGreaterThan(String title,Long bno);
+    public Collection<Board> findByTitleContainingAndBnoGreaterThan(String title, Long bno);
 
     public Collection<Board> findByBnoGreaterThanOrderByBnoDesc(Long bno);
     // or Asc
 
-    public List<Board> findByBnoGreaterThanOrderByBnoDesc(Long bno , Pageable paging);
+    public List<Board> findByBnoGreaterThanOrderByBnoDesc(Long bno, Pageable paging);
 
     //public List<Board> findByBnoGreaterThan(Long bno , Pageable paging);
 
 
-    public Page<Board> findByBnoGreaterThan(Long bno , Pageable paging);
+    public Page<Board> findByBnoGreaterThan(Long bno, Pageable paging);
 
     // JPQL
     @Query("SELECT b FROM Board b WHERE b.title like %?1% and b.bno > 0 ORDER BY b.bno desc")

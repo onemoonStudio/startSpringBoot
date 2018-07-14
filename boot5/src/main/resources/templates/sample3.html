@@ -5,21 +5,21 @@
     <title>Sample3</title>
 </head>
 <body>
-    <table border="1">
-        <tr>
-            <td>INDEX</td>
-            <td>MID</td>
-            <td>MNAME</td>
-            <td>REGDATE</td>
-        </tr>
-        <tr th:each="member, iterState : ${list}">
-            <td th:text="${iterState.index} "></td>
-            <td th:text="${member.mid}"></td>
-            <td th:text="${member.mname}"></td>
-            <td th:text="${#dates.format(member.regdate,'yyyy-MM-dd')}"></td>
+<table border="1">
+    <tr>
+        <td>INDEX</td>
+        <td>MID</td>
+        <td>MNAME</td>
+        <td>REGDATE</td>
+    </tr>
+    <tr th:each="member, iterState : ${list}">
+        <td th:text="${iterState.index} "></td>
+        <td th:text="${member.mid}"></td>
+        <td th:text="${member.mname}"></td>
+        <td th:text="${#dates.format(member.regdate,'yyyy-MM-dd')}"></td>
 
-        </tr>
+    </tr>
 
-    </table>
+</table>
 </body>
 </html>

@@ -20,7 +20,7 @@ public class SampleControllerTest {
     MockMvc mock;
 
     @Test
-    public void testHello() throws Exception{
+    public void testHello() throws Exception {
         MvcResult result = mock.perform(get("/hello"))
                 .andExpect(status().isOk())
                 .andExpect(content().string("Hello world"))

@@ -29,7 +29,7 @@ public class BoardRepositoryTests {
 //    }
 
     @Test
-    public void testInsert(){
+    public void testInsert() {
 //        Board board = new Board();
 //        board.setTitle("게시물의 제목 ");
 //        board.setContent("게시물 내용");
@@ -40,7 +40,7 @@ public class BoardRepositoryTests {
 
 
     @Test
-    public void testRead(){
+    public void testRead() {
         // v1
 //        Board board = boardRepo.findOne(1L);
         // v2
@@ -54,7 +54,7 @@ public class BoardRepositoryTests {
     }
 
     @Test
-    public void testUpdate(){
+    public void testUpdate() {
         System.out.println("Read First ......... ");
         Board board = boardRepo.findById(8L).get();
 
@@ -66,7 +66,7 @@ public class BoardRepositoryTests {
     }
 
     @Test
-    public void testDelete(){
+    public void testDelete() {
         System.out.println(boardRepo.count());
         System.out.println("DELETE Start");
 //        boardRepo.deleteById(1L);
