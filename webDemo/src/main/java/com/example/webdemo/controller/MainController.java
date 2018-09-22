@@ -1,4 +1,4 @@
-package com.example.webdemo;
+package com.example.webdemo.controller;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @AllArgsConstructor
-public class WebController {
+public class MainController {
 
     @GetMapping(value = "/")
     public String main(){
