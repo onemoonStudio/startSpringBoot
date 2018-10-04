@@ -1,8 +1,5 @@
 package com.example.exhandler.entity;
 
-import lombok.Builder;
-
-@Builder
 public class ErrorModel {
     private int code;
     private String message;

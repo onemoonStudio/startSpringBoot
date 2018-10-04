@@ -6,11 +6,10 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ResponseStatus(HttpStatus.CONFLICT)
 public class ConflictException extends BaseException{
     public ConflictException(){
-        super(HttpStatus.CONFLICT , "Conflict");
-        System.out.println("hello world");
+        super(HttpStatus.CONFLICT.value() , "Conflict");
     }
 
     public ConflictException(String message) {
-        super(HttpStatus.CONFLICT, message);
+        super(HttpStatus.CONFLICT.value(), message);
     }
 }

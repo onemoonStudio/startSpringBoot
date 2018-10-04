@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class BadRequestException extends BaseException{
 
     public BadRequestException(){
-        super(HttpStatus.BAD_REQUEST , "Check Request");
+        super(HttpStatus.BAD_REQUEST.value() , "Check Request");
     }
 
     public BadRequestException(String message) {
-        super(HttpStatus.BAD_REQUEST, message);
+        super(HttpStatus.BAD_REQUEST.value(), message);
     }
 
     public static int getCode(){
