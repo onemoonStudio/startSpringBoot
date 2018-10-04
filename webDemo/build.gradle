@@ -28,6 +28,7 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     // https://mvnrepository.com/artifact/pl.allegro.tech.boot/handlebars-spring-boot-starter
     compile group: 'pl.allegro.tech.boot', name: 'handlebars-spring-boot-starter', version: '0.3.0'
+    compile("org.springframework.boot:spring-boot-starter-mail")
     compileOnly('org.projectlombok:lombok')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
